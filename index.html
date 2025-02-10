@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบจัดการคลังสินค้า</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <div class="max-w-2xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold text-center text-gray-700">📦 ระบบจัดการคลังสินค้า</h1>
+        
+        <!-- เพิ่มสินค้า -->
+        <div class="mt-6">
+            <h2 class="text-lg font-semibold text-gray-600">เพิ่มสินค้า</h2>
+            <input type="text" id="productName" placeholder="ชื่อสินค้า" class="w-full p-2 mt-2 border rounded">
+            <input type="number" id="productPrice" placeholder="ราคา" class="w-full p-2 mt-2 border rounded">
+            <input type="number" id="productStock" placeholder="จำนวนสต็อก" class="w-full p-2 mt-2 border rounded">
+            <input type="text" id="productCategory" placeholder="หมวดหมู่" class="w-full p-2 mt-2 border rounded">
+            <button onclick="addProduct()" class="w-full mt-3 bg-blue-500 text-white py-2 rounded hover:bg-blue-600">➕ เพิ่มสินค้า</button>
+        </div>
+
+        <!-- อัปเดตสต็อก -->
+        <div class="mt-6">
+            <h2 class="text-lg font-semibold text-gray-600">อัปเดตจำนวนสินค้า</h2>
+            <input type="text" id="updateProductId" placeholder="ID สินค้า" class="w-full p-2 mt-2 border rounded">
+            <input type="number" id="updateQuantity" placeholder="จำนวน" class="w-full p-2 mt-2 border rounded">
+            <button onclick="updateStock()" class="w-full mt-3 bg-yellow-500 text-white py-2 rounded hover:bg-yellow-600">🔄 อัปเดตสต็อก</button>
+        </div>
+
+        <!-- รายงานยอดขาย -->
+        <div class="mt-6 text-center">
+            <button onclick="generateReport()" class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600">📊 สร้างรายงาน</button>
+        </div>
+
+        <!-- แสดงสินค้าทั้งหมด -->
+        <div class="mt-6">
+            <h2 class="text-lg font-semibold text-gray-600">📋 รายการสินค้า</h2>
+            <ul id="productList" class="mt-3 space-y-2"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
